@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    <title>MainPage</title>
+    <style>
+        .nav {
+            height: 70px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgb(237, 229, 240);
+            display: flex;
+            align-items: flex-end;
+        }
+        .nav-right-items {
+            display: flex;
+            margin-left: auto;
+        }
+        .nav-right-items div::after{
+            content: '|';
+        }
+        .nav-right-items div:last-child::after {
+            content: '';
+        }
+        .nav-items{
+            margin-left: 20px;
+        }
+        .nav-items:nth-last-child(1) {
+            margin-right: 20px;
+        }
+        #maintitle {
+            font-weight: bold;
+            margin-left: 20px;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            margin: 0;
+            padding-top: 10px;
+        }
+        header {
+            height: 142px;
+            background-image: url(./photos/mountains.jpeg);
+            /* background-position:; */
+        }
+        .navup {
+        text-decoration-line: none;
+        font-family: 'Oswald', sans-serif;
+        }
+        .navup:link {
+            color:#6d2f8c
+        }
+        .navup:hover {
+            color: white;
+        }
+        .title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+        .main {
+            width: 800px;
+            margin: 0 auto;
+            margin-top: 60px;
+        }
+        .prices {
+            display: flex;
+
+        }
+        .price-item{
+            width: 300px;
+            height: 300px;
+            border: 3px solid black;
+            margin: 20px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .item-title {
+            font-size: 1.5rem;
+            background-color: rgb(235, 235, 235);
+            text-align: center;
+            height: 53px;
+            line-height: 53px;
+            border-bottom: 1px solid rgb(20, 18, 18);
+        }
+        .item-detail {
+            text-align: center;
+            height: 65%;
+            padding: 0 20px;
+            line-height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           font-family: 'Gowun Batang', serif;
+
+        }
+        button a {
+            text-decoration: none;
+            color: khaki;
+        }
+        button a:hover {
+            color: white;
+        }
+        .menu-item-button{
+            color: khaki;
+            background-color: darkkhaki;
+            background-image: url();
+            border-color: darkslategrey;
+            padding: .5rem 1rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: .3rem;
+            margin: 0 auto;
+        }
+        .footer {
+            height: 140px;
+            background-color: rgb(231, 248, 229);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        body{
+            /* width:1519px;
+            height:760px; */
+            margin: 0 0;
+        }
+        #email, #createdDate {
+            color: white;
+            font-weight: bold;
+        }
+        #welcome {
+            display: flex;
+        }
+        #login{
+            display: inline;
+            margin-left: 10px;
+            color: rgb(0, 0, 0);
+            border-color: rgb(245, 236, 245);
+        }
+        #login:hover {
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <p id="maintitle">Welcome to Dahyun Kim's website</p>
+        <nav>
+            <div class="nav">
+                <button id="login" onclick="login();">login / sign up</button>
+                <div class="nav-right-items">
+                    <div class="nav-items"><a class=navup href="./index.html">Main Page   &nbsp; &nbsp;</a></div>
+                    <div class="nav-items"><a class=navup href="./Me.html">All about me   &nbsp; &nbsp;</a></div>
+                    <div class="nav-items"><a class=navup href="./travel.html">Travel  &nbsp; &nbsp;</a></div>
+                    <div class="nav-items"><a class=navup href="./poem.html">Poems  &nbsp; &nbsp;</a></div>
+                    <div class="nav-items"><a class=navup href="./game.html">Game  &nbsp; &nbsp;</a></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <article style="margin-bottom: 30px;">
+           
+                <div class="main">
+                    <div style="font-family: 'Gowun Batang', serif;" class="title">
+                        환영합니다.
+                    </div>
+                    <div class="subtitle">
+                        <pre style="font-family: 'Gowun Batang', serif; font-size: 20px;">안녕하세요. 여기서 저희의 만남이 시작되었네요. 두 번째 만남일 수도 있어요.
+혹시 아나요? 우리가 지하철에서 어깨를 맞대고 졸았던 이름 모를 사이였을지.
+다시 또 우연처럼 스쳐 갈 수도 있지만, 오늘은 인연이 되길 바랄 뿐이에요.
+제 이름은 김다현입니다. 오늘 이곳에 와준 그대에게 환영과 고마운 마음을 보냅니다.</pre>
+                    </div>
+                    <div class="prices">
+                        <div class="price-item">
+                            <div class="item-title">
+                                All about me
+                            </div>
+                            <div class="item-detail">
+                                 &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;저를 &nbsp;&nbsp;&nbsp;  &nbsp; &nbsp;소개합니다.
+                            </div>
+                            <button class="menu-item-button">
+                                <a href="./Me.html">click me</a>
+                            </button> 
+                        </div>
+                        <div class="price-item">
+                            <div class="item-title">
+                                Travel
+                            </div>
+                            <div class="item-detail">
+                                &nbsp;&nbsp;여행 추억을 &nbsp;&nbsp;공유합니다.
+                            </div>
+                            <button class="menu-item-button">
+                                <a href="travel.html">click me</a>
+                            </button> 
+                        </div>
+                        <div class="price-item">
+                            <div class="item-title">
+                                Poems
+                            </div>
+                            <div class="item-detail">
+                                좋아하는 시를 소개합니다.
+                            </div>
+                            <button class="menu-item-button">
+                                <a href="./poem.html">click me</a>
+                            </button> 
+                        </div>
+                        <div class="price-item">
+                            <div class="item-title">
+                                Mini Game
+                            </div>
+                            <div class="item-detail">
+                               저의 미니게임 Another Earth 해보시겠어요?
+                            </div>
+                            <button class="menu-item-button">
+                                <a href="./game.html">click me</a>
+                            </button> 
+                        </div>
+                    </div>
+                </div>
+        </article>
+    </section>
+    <footer>
+        <div class="footer">
+            <br><br>
+            <p id=createdDate style="text-align: center; margin: 1px; font-family: 'Gowun Batang'; ">Since 2021.09.05</p>
+            <p id="email" style="text-align: center; margin: 1px; font-family: 'Gowun Batang'; ">Contact : greendory.k@gmail.com</p>
+
+        </div>
+    </footer> 
+    <script>
+        const login =() =>{
+            open('login.html',"Login / Sign Up","width=800, height=500, top=200px");
+        }
+    </script>   
+</body>
+</html>

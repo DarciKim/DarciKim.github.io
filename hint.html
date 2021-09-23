@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hint</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        img {
+            width: 250px;
+        }
+        p{
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="margin: 0 0; background-color: rgb(88, 88, 88);">
+    <br>
+    <img src="https://i.ibb.co/qY9k6yC/hint.png" alt="">
+    <br>
+    <br>
+    <button onclick="hint();">시 보러가기</button>
+    <p>힌트: 1~7번째 사이의 시</p>
+<script>
+    const hint =()=>{
+        open('poem.html','_self')
+    }
+</script>   
+    
+</body>
+</html>

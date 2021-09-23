@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>ID/Password requirements</title>
+</head>
+<body>
+    <form action="" method="GET">
+        <fieldset>
+            <legend>login</legend>
+            <input type="text" id="loginId" placeholder="ID" name="loginId" >
+            <input type="text" id="loginPassword" placeholder="Password" name="loginPassword">
+        </fieldset>
+        <br>
+        <button id="login2" onclick="logincheck();">login</button>
+    </form>
+    <hr>
+    <hr>
+    <hr><hr>
+    <br>
+    <form action="">
+        <fieldset>
+            <legend>회원가입</legend>
+                <label for="id">ID : </label>
+                <input id="id" type="text" name="id">
+                <br>
+                <label for="password">Password : </label>
+                <input id="password" type="text" name="password">
+                <br>
+                <label for="passwordC">Confirm Password : </label>
+                <input id="passwordC" type="text" > 
+                <br>
+                <label for="name">Name : </label>
+                <input id="name" type="text" name="name">             
+                <br>
+                <label for="email">이메일 : </label>
+                <input id="email" type="text" name="email">   
+                <br>
+                <label for="phone">전화번호 : </label>
+                <input id="phone" type="text" name="phone">        
+        </fieldset> 
+        <br>
+        <button id="button1">제출</button>
+    </form>
+    <script>
+        function logincheck() {
+            const userid = loginId.value;
+            const userpassword = loginPassword.value;
+            if(userid=="" || userpassword==""){
+                alert("아이디와 패스워드 모두 입력해주세요")
+                return false;
+            }else{
+                if(!window.localStorage.getItem(userid)){
+                    alert("존재하지 않는 아이디입니다.")
+                    return false;
+                }else{
+                    if(userpassword!=window.localStorage.getItem(userid)){
+                        alert("로그인에 실패했습니다.")
+                        return false;
+                    }else{
+                        alert("로그인에 성공했습니다.")
+                    }
+                }
+            }
+        }
+
+    button1.onclick = () =>{
+     const ID = id.value;
+
+     console.log(ID);
+     if(!/\d/.test(ID)){
+       alert("ID must contain a number")
+       return false;
+     }
+     if(!(/^[a-z]/.test(ID))) {
+        alert("ID must start with a lower-case letter.")
+        return false;
+     }
+     if(ID.length<4 || ID.length>12) {
+        alert("ID must be 4-12 characters long.")
+        return false;
+     }
+
+    //2.비밀번호 확인 검사
+    //숫자/문자/특수문자 포함 형태의 8~15자리 이내의 암호 정규식 
+     const PASSWORD = password.value;
+     if(!/[*!&]/.test(PASSWORD) ||!/\d/.test(PASSWORD) ||!/[a-zA-Z]/.test(PASSWORD)){
+        alert("The password must include a number, a letter, a special character(*!& only)")
+        return false;
+     }
+     if(PASSWORD.length<8 || PASSWORD.length>15){
+        alert("The password must be between 8-15 characters long")
+        return false;
+     }
+     
+     //비밀번호일치여부 검사
+     const PASSWORDC = passwordC.value;
+     if(PASSWORD !==PASSWORDC) {
+         alert("The entries for 'password' and 'confirm password' must match")
+         return false;
+     }
+
+    //  //3.이름검사 : 한글2글자 이상만 허용. 
+    //  const UNAME = name.value;
+    //  if(!/^[가-힣]{2,}$/.test(UNAME)){
+    //      alert("Name must be in Korean Hangul characters only (2 characters minimum)")
+    //      return false;
+    //  }
+
+     //5.이메일 검사
+     //@가 포함 되어야 함(@앞에가 영문자,숫자로  4~12글자 ) <br>
+     const EMAIL = email.value;
+     if(!/^[a-zA-Z0-9]{4,12}\@.+/.test(EMAIL)){
+         alert("Email address must include the '@'' symbol")
+         return false;
+     }
+    //  if(!/^[ds]$/.test(EMAIL)){ 만약에 영어랑 숫자만 가능케 하려면?
+    //      alert("Email address must consist of numbers and letters only")
+    //      return false;
+    //  }
+
+    // 6. 전화번호는 첫번째 필드는 010만 입력 가능 해야 함 <br>
+    //                 두번째 필드는 3자리 이상 입력 해야 함 <br>
+    //                 세번째 필드는 무조건 4자리 입력 해야함 <br>
+    //                 (모두 숫자만 가능 해야함) <br>
+     const PHONE = phone.value;
+     const PHONERep = /^[0][1][0]-\d{3,4}-\d{4}$/;
+     if(!PHONERep.test(PHONE)) {
+         alert("For phone number, you must insert 010 in the first 3 digits ")
+         return false;
+     }
+     if(window.localStorage.getItem(ID)) {
+        alert("The Id already exists")
+        return false;
+     }
+     
+     window.localStorage.setItem(ID, PASSWORD)
+     alert("회원가입이 완료되었습니다");
+     }
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    <title>Game</title>
+</head>
+<style>
+    body{
+        /* width:1519px;
+        height:760px ; */
+        margin: 0 0;
+        background-image: url(./photos/milkyWay.jpg);
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
+    #maintitle {
+            font-weight: bold;
+            margin-left: 20px;
+            color:white;
+            font-size: 30px;
+            text-align: center;
+            margin: 0;
+            padding-top: 10px;
+        }
+
+    .nav {
+            height: 70px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgb(255, 255, 255);
+            display: flex;
+            align-items: flex-end;
+        }
+        .nav-right-items {
+            display: flex;
+            margin-left: auto;
+        }
+        .nav-right-items div::after{
+            content: '|';
+            color: white;
+        }
+        .nav-right-items div:last-child::after {
+            content: '';
+        }
+        .navup{
+            color: white;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+        }
+        .navup:hover {
+            color: rgb(234, 250, 14);
+        }
+        .nav-items{
+            margin-left: 20px;
+        }
+        .nav-items:nth-last-child(1) {
+            margin-right: 20px;
+        }
+        header{
+            height: 142px;
+        }
+        #manual{
+            text-align: center;
+        }
+        #click:hover {
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+        .footer {
+            height: 140px;
+            border-top: 1px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 1px;
+        }
+        #email, #createdDate {
+            color: white;
+            font-weight: bold;
+        }
+</style>
+<body>
+    <header>
+        <p id="maintitle">Welcome to Dahyun Kim's website</p>
+        <nav>
+            <div class="nav">
+                <div class="nav-right-items">
+                    <div class="nav-items"><a class=navup href="./index.html">Main Page   &nbsp; &nbsp;</a></div>
+                    <div class="nav-items"><a class=navup href="./Me.html">All about me   &nbsp; &nbsp;</a></div>
+                    <div class="nav-items"><a class=navup href="./travel.html">Travel  &nbsp; &nbsp;</a></div>
+                    <div class="nav-items"><a class=navup href="./poem.html">Poems  &nbsp; &nbsp;</a></div>
+                    <div class="nav-items"><a class=navup href="./game.html">Game  &nbsp; &nbsp;</a></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <div id="manual">
+        <img style=" display: block; width:1050px; border-radius: 6px; margin: 0 auto;" src="./photos/manual4.png" alt="" >
+        <img id="click" onclick="popup();" style="width: 200px;" src="https://i.ibb.co/CbmH29S/start.png" alt="">
+    </div>
+    <br><br>
+    <footer>
+        <div class="footer">
+            <br><br>
+            <p id=createdDate style="text-align: center; margin: 1px; font-family: 'Gowun Batang'; ">Since 2021.09.05</p>
+            <p id="email" style="text-align: center; margin: 1px; font-family: 'Gowun Batang'; ">Contact : greendory.k@gmail.com</p>
+        </div>
+    </footer>  
+</body>
+<script>
+   const popup =() =>{
+       let popup = open('AnotherEarth2.html',"AnotherEarth","width=1000, height=1000");
+       let popupsmall = open('hint.html',"Hint","width=300px, height=400px left=1100");
+    
+   }
+</script>
+</html>

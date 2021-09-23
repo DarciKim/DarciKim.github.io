@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    <style>
+        a:link{
+			color:#795aa2;
+		}
+        body{
+            width:1519px;
+            height:760px ;
+            margin: 0 0;
+        }
+        .nav {
+        height: 70px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid rgb(237, 229, 240);
+        display: flex;
+        align-items: flex-end;
+        }
+        .nav-right-items {
+            display: flex;
+            margin-left: auto;
+        }
+        .nav-right-items div::after{
+            content: '|';
+        }
+        .nav-right-items div:last-child::after {
+            content: '';
+        }
+        .navup:hover {
+            color: white;
+        }
+        .nav-items{
+            margin-left: 20px;
+        }
+        .nav-items:nth-last-child(1) {
+            margin-right: 20px;
+        }
+        #maintitle {
+            font-weight: bold;
+            margin-left: 20px;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            margin: 0;
+            padding-top: 10px;
+        }
+        header {
+            height: 142px;
+            background-image: url(./photos/mountains.jpeg);
+            /* background-position:; */
+        }
+        .navup {
+        text-decoration-line: none;
+        font-family: 'Oswald', sans-serif;
+        }
+        .footer {
+            height: 140px;
+            background-color: rgb(231, 248, 229);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 1px;
+        }
+        #email, #createdDate {
+            color: white;
+            font-weight: bold;
+        }
+        #only-bg {
+                    width: 100%;
+                    height: 700px;
+                    border: 3px solid white;
+                    background: rgb(247, 240, 238) url('./photos/bg1.jpg') center center/cover no-repeat fixed;
+                    position:relative;
+                }
+        #only-bg #map{
+            position: absolute; top:0; left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #pointer1{
+            position:relative;
+            top:415PX;
+            left:1200px;
+            z-index: 10;
+            width: 80px;        
+        }
+        #pointer1:hover{
+            transform: translateY(-10px);
+            cursor: pointer;
+        }
+        #pointer2:hover{
+            transform: translateY(-10px);
+            cursor: pointer;
+        }
+        #pointer3:hover{
+            transform: translateY(-10px);
+            cursor: pointer;
+        }
+        #pointer4:hover{
+            transform: translateY(-10px);
+            cursor: pointer;
+        }
+        #pointer2{
+            position:relative;
+            top:238px;
+            left:234px;
+            z-index: 10;
+            width: 80px;        
+        }
+        #pointer3{
+            position:relative;
+            top:480px;
+            left:1179px;
+            z-index: 10;
+            width: 80px;        
+        }
+        #pointer4{
+            position:relative;
+            top:165px;
+            left:-40px;
+            z-index: 10;
+            width: 80px;        
+        }
+        #pointer5{
+            position:relative;
+            top:175px;
+            left:835px;
+            z-index: 10;
+            width: 80px;        
+        }
+        #pointer5:hover{
+            transform: translateY(-10px);
+            cursor: pointer;
+        }
+        #video{
+            position:relative;
+            width: 140px;  
+            left: 930px;
+            top: 1%;
+            transition-duration: .8s;
+            display: inline;
+
+        }
+        #video{
+            animation-name: wider;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+
+        }
+        #video:hover{
+            cursor: pointer;
+        }
+        #video:hover+ #play, #play:hover{
+            cursor: pointer;
+            display: inline;
+        }
+        #play{
+            position:relative;
+            left:820px;
+            top:-37px;
+            width: 70px;
+            z-index: 10;
+            display: none;
+        }
+        @keyframes wider {
+            0% {
+                transform: scale(1.0);
+            }
+            50% {
+                transform: scale(.8);
+            }
+            100% {
+                transform: scale(1.0);
+            }
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <p id="maintitle">Welcome to Dahyun Kim's website</p>
+        <nav>
+            <div class="nav">
+                <div class="nav-right-items">
+                    <div class="nav-items"><a class=navup href="./index.html">Main Page   &nbsp; &nbsp;</a></div>
+                    <div class="nav-items"><a class=navup href="./Me.html">All about me   &nbsp; &nbsp;</a></div>
+                    <div class="nav-items"><a class=navup href="./travel.html">Travel  &nbsp; &nbsp;</a></div>
+                    <div class="nav-items"><a class=navup href="./poem.html">Poems  &nbsp; &nbsp;</a></div>
+                    <div class="nav-items"><a class=navup href="./game.html">Game  &nbsp; &nbsp;</a></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <article>
+            <div id="only-bg">
+                <img id="map" src="./photos/galaxyMap.png" alt="map">
+                <img onclick="javascript:location.href='./Travel/aus.html'" src="https://i.ibb.co/9cf7tjG/pointer.png" alt="pointer" id="pointer1">
+                <img onclick="javascript:location.href='./Travel/Mexico.html'" src="https://i.ibb.co/9cf7tjG/pointer.png" alt="pointer" id="pointer2">
+                <img onclick="javascript:location.href='./Travel/NZ.html'" src="https://i.ibb.co/9cf7tjG/pointer.png" alt="pointer" id="pointer3">
+                <img onclick="javascript:location.href='./Travel/USA.html'" src="https://i.ibb.co/9cf7tjG/pointer.png" alt="pointer" id="pointer4">
+                <img onclick="javascript:location.href='./Travel/jeju.html'" src="https://i.ibb.co/9cf7tjG/pointer.png" alt="pointer" id="pointer5">
+                <img onclick="javascript:location.href='./travel/video.html'" src="https://i.ibb.co/K6Xph7y/playicon.png" alt="videoIcon" id="video">
+                <img onclick="javascript:location.href='./travel/video.html'" src="https://i.ibb.co/VqfkSjh/play.png" alt="playIcon" id="play">
+            </div>
+        </article>
+    </section>
+    <footer>
+        <div class="footer">
+            <br><br>
+            <p id=createdDate style="text-align: center; margin: 1px; font-family: 'Gowun Batang'; ">Since 2021.09.05</p>
+            <p id="email" style="text-align: center; margin: 1px; font-family: 'Gowun Batang'; ">Contact : greendory.k@gmail.com</p>
+        </div>
+    </footer>    
+    <script>
+
+    </script>
+</body>
+</html>
